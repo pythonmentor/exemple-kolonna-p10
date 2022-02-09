@@ -11,9 +11,6 @@ class UserFollowsView(CreateView):
     success_url = reverse_lazy('users:follows')
     template_name = 'users/follows.html'
 
-    def post(self, request, *args, **kwargs):
-        super().post(request, *args, **kwargs)
-
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
